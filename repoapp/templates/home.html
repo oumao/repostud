@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-</head>
-<body>
-    {% block body %}
-        <h1>Hello World</h1>
-    {% endblock %}
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4 text-center">REPOSTUDS</h1>
+    <p class="lead">A platform where students can upload their assignments easily.</p>
+    <p>This platform will help both the student and the lecturer to save time also to keep track of their progress. Say no to lost assignments and missing marks!</p>
+    <hr class="my-4">
+    <p></p>
+    <a class="btn btn-primary btn-block btn-lg" href="#" role="button">Upload Assignments Here&nbsp;&nbsp;<i class="fas fa-upload"></i></a>
+  </div>
+{% endblock %}
