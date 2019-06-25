@@ -1,0 +1,66 @@
+<div class="sidebar" data-background-color="green" data-active-color="danger">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="{{ url_for('admin_dashboard')}}" class="simple-text">
+                    Repostuds | Admin
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="{{ url_for('admin_dashboard')}}">
+                        <i class="ti-panel"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('user_profile')}}">
+                        <i class="ti-user"></i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <i class="fas fa-users"></i>
+                        <p>Add Students</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <i class="ti-view-list-alt"></i>
+                        <p>Manage Students</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="fas fa-user-plus"></i>
+                        <p>Add Lecturer</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="ti-view-list"></i>
+                        <p>Manage Lecturer's</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="ti-pencil-alt"></i>
+                        <p>Register Units</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="ti-pencil"></i>
+                        <p>Assign Lecturer Unit</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>

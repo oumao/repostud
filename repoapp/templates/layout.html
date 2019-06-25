@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+        <title>RepoSTUD - {{title}}</title>
+    {% else %}
+        <title>RepoSTUD</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome/css/all.css')}}">
+</head>
+<body>
+{% include "includes/_navbar.html" %}
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-8">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{category}}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </div>
+            <!-- Side Bar -->
+        <div class="col-md-4" id="anoun">
+            <div class="content-section">
+                <h2>Announcements</h2>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Latest Assignments</li>
+                    <li class="list-group-item list-group-item-light">Announcements</li>
+                    <li class="list-group-item list-group-item-light">Calendars</li>
+                    <li class="list-group-item list-group-item-light">etc</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="bg-steel page-footer font-small" id="footer">
+    <p class="text-center footer-copyright text-center py-3">© 2019 OUMAO</p>
+</footer>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+</body>
+</html>
