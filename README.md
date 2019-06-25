@@ -7,5 +7,5 @@ This is a python project which requires
 - HTML5 and CSS3 
 
 ALSO ensure that you install all the requirements as in the requirements.txt file.
-These can be installed using ~pip install -r requirements.txt~ 
+These can be installed using *pip install -r requirements.txt* 
 
