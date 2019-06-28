@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (1,'Evans Ouma','evans@gmail.com','default.jpg','pbkdf2:sha256:150000$y6PJ2wMt$38ee1e218c1bb51f0f71036875877ef462c854072370dfd82b2fa53200bb5c7c');
+INSERT INTO `admin` VALUES (1,'John Otieno','john@gmail.com','default.jpg','pbkdf2:sha256:150000$SmPdwDHs$cfb5f198312b38e0efa86f6d5287113b32c731c20252a2753cf6dce8f7e3ed00');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,6 +81,7 @@ CREATE TABLE `course` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `course_name` text NOT NULL,
   `course_code` varchar(20) NOT NULL,
+  `is_assigned` tinyint(1) NOT NULL,
   `lecturer_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `course_code` (`course_code`),
@@ -107,14 +108,15 @@ DROP TABLE IF EXISTS `lecturer`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `lecturer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(80) NOT NULL,
+  `first_name` varchar(80) NOT NULL,
+  `last_name` varchar(80) NOT NULL,
   `email` varchar(80) NOT NULL,
   `staff_number` varchar(40) NOT NULL,
   `password` varchar(120) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `staff_number` (`staff_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,6 +125,7 @@ CREATE TABLE `lecturer` (
 
 LOCK TABLES `lecturer` WRITE;
 /*!40000 ALTER TABLE `lecturer` DISABLE KEYS */;
+INSERT INTO `lecturer` VALUES (1,'Nixon ','Amuomo','namuomo@gmail.com','RU/003/2019','pbkdf2:sha256:150000$Hro73kmU$506c4ba297f65fe5baf8bbb6e7e5fb6021e7557225f7338be1db2e68319734d7');
 /*!40000 ALTER TABLE `lecturer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,15 +138,17 @@ DROP TABLE IF EXISTS `student`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `student` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(80) NOT NULL,
+  `first_name` varchar(80) NOT NULL,
+  `last_name` varchar(80) NOT NULL,
   `admission_number` varchar(80) NOT NULL,
   `birth_date` datetime NOT NULL,
+  `gender` varchar(20) NOT NULL,
   `program` text NOT NULL,
   `study_year` varchar(20) NOT NULL,
   `password` varchar(120) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `admission_number` (`admission_number`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,6 +157,7 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
+INSERT INTO `student` VALUES (1,'Kevin','Ouma','PHY/003/2014','1998-12-12 00:00:00','M','Fashion and Design','Year One','pbkdf2:sha256:150000$7vdLM9cl$1a79ce6744c10cba4f9e527fd940085cef7c94b34e82e525fd96dc74dc669019'),(2,'Titus','Mbogo','PHY/001/2014','1996-11-05 00:00:00','M','Fashion and Design','Year Two','pbkdf2:sha256:150000$gpD5T9XO$47bacd49ce101788e20eaec73008f42c88c80a2ec2d44fff0659380e347deb38'),(3,'Johnson','Peters','CSC/022/2015','1995-11-15 00:00:00','M','Computer Science','Year One','pbkdf2:sha256:150000$HESKlgJm$1880a80067ed1a4578f35af0052b7bea1e0427b02afba85631acde9163c9f2ee'),(4,'Austin','Oduor','CSC/003/2015','1994-11-02 00:00:00','M','Computer Science','Year One','pbkdf2:sha256:150000$TncICZsb$5a0fef14f97a3fd395baf2a565e45b36dc5bdb1490aee1d5ba19fdc92e90805c'),(5,'Cosmas','Musau','STA/002/2015','1997-07-22 00:00:00','M','Statistics','Year Two','pbkdf2:sha256:150000$P6BLmkgL$2a621b8e2704a508ac1b736a64096673348f9245fd34bc76c8475f0d08715b70');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -220,4 +226,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-17 10:15:43
+-- Dump completed on 2019-06-28 11:37:07
