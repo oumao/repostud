@@ -1,4 +1,4 @@
-<div class="sidebar" data-background-color="green" data-active-color="danger">
+<div class="sidebar" data-background-color="white" data-active-color="danger">
 
     <!--
 		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
@@ -26,39 +26,33 @@
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="{{ url_for('add_student')}}">
                         <i class="fas fa-users"></i>
                         <p>Add Students</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="{{ url_for('student_table')}}">
                         <i class="ti-view-list-alt"></i>
                         <p>Manage Students</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="{{ url_for('add_lecturer')}}">
                         <i class="fas fa-user-plus"></i>
                         <p>Add Lecturer</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="{{ url_for('lecturer_table')}}">
                         <i class="ti-view-list"></i>
-                        <p>Manage Lecturer's</p>
+                        <p>Manage Lecturers</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="{{ url_for('add_course')}}">
                         <i class="ti-pencil-alt"></i>
-                        <p>Register Units</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="typography.html">
-                        <i class="ti-pencil"></i>
-                        <p>Assign Lecturer Unit</p>
+                        <p>Assign Lecturer Course</p>
                     </a>
                 </li>
             </ul>

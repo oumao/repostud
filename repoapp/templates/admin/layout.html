@@ -40,6 +40,15 @@
     {% include "admin/includes/_sidebar.html" %}
     <div class="main-panel">
         {% include "admin/includes/_navbar.html"%}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert alert-{{category}}">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         {% block content %}{% endblock %}
         {% include "admin/includes/_footer.html"%}
     </div>
