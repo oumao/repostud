@@ -28,9 +28,11 @@ class Admin(db.Model, UserMixin):
 class Student(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    fullname = db.Column(db.String(80), nullable=False)
+    first_name = db.Column(db.String(80), nullable=False)
+    last_name = db.Column(db.String(80), nullable=False)
     admission_number = db.Column(db.String(80), nullable=False, unique=True)
     birth_date = db.Column(db.DateTime, nullable=False)
+    gender = db.Column(db.String(20), nullable=False)
     program = db.Column(db.Text, nullable=False)
     study_year = db.Column(db.String(20), nullable=False)
     password = db.Column(db.String(120), nullable=False)
@@ -47,7 +49,8 @@ class Student(db.Model):
 class Lecturer(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    fullname = db.Column(db.String(80), nullable=False)
+    first_name = db.Column(db.String(80), nullable=False)
+    last_name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(80), nullable=False, unique=True)
     staff_number = db.Column(db.String(40), nullable=False, unique=True)
     password = db.Column(db.String(120), nullable=False)
@@ -61,8 +64,9 @@ class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     course_name = db.Column(db.Text, nullable=False)
     course_code = db.Column(db.String(20), nullable=False, unique=True)
+    is_assigned = db.Column(db.Boolean, nullable=False, default=False)
     lecturer_id = db.Column(db.Integer, db.ForeignKey('lecturer.id'), nullable=False)
-    assignments = db.relationship('Assignment', backref='course', lazy='dynamic')
+    assignments = db.relationship('Assignment', backref='course', lazy=True)
     assignment_submitted = db.relationship('SubmittedAssignment', backref='course', lazy='dynamic')
 
     def __repr__(self):
