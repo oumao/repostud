@@ -6,6 +6,11 @@ from flask_login import UserMixin
 def load_user(user_id):
     return Admin.query.get(int(user_id))
 
+@login_manager.user_loader
+def load_user(user_id):
+    return Student.query.get(int(user_id))
+
+
 student_courses = db.Table('student_courses',
     db.Column('student_id', db.Integer, db.ForeignKey('student.id'), primary_key=True),
     db.Column('course_id', db.Integer, db.ForeignKey('course.id'), primary_key=True)
@@ -25,7 +30,7 @@ class Admin(db.Model, UserMixin):
         return f"Admin({self.fullname}, {self.email}, {self.profile_pic})"
 
 
-class Student(db.Model):
+class Student(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(80), nullable=False)
@@ -43,7 +48,7 @@ class Student(db.Model):
                             lazy='dynamic')
 
     def __repr__(self):
-        return f"Student({self.fullname}, {self.admission_number}, {self.birth_date}, {self.program}, {self.study_year})"
+        return f"Student({self.first_name}, {self.last_name}, {self.admission_number}, {self.birth_date}, {self.program}, {self.study_year})"
 
 
 class Lecturer(db.Model):
@@ -57,7 +62,7 @@ class Lecturer(db.Model):
     courses = db.relationship('Course', backref='lecturer', lazy='dynamic')
 
     def __repr__(self):
-        return f"Lecturer({self.fullname}, {self.email}, {self.staff_number})"
+        return f"Lecturer({self.first_name}, {self.last_name}, {self.email}, {self.staff_number})"
 
 class Course(db.Model):
 
