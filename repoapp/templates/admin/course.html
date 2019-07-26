@@ -27,17 +27,32 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                    {{ form.course_code.label(class="form-control-label") }}
-                                    {% if form.course_code.errors %}
-                                        {{ form.course_code(class="form-control form-control-lg is-invalid") }}
-                                        <div class="invalid-feedback">
-                                            {% for error in form.course_code.errors %}
-                                                <span>{{ error }}</span>
-                                            {% endfor %}
-                                        </div>
-                                    {% else %}
-                                        {{ form.course_code(class="form-control form-control-lg") }}
-                                    {% endif %}
+                                {{ form.course_code.label(class="form-control-label") }}
+                                {% if form.course_code.errors %}
+                                    {{ form.course_code(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.course_code.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.course_code(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{ form.staff_number.label(class="form-control-label") }}
+                                {% if form.staff_number.errors %}
+                                    {{ form.staff_number(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.staff_number.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.staff_number(class="form-control form-control-lg") }}
+                                {% endif %}
                             </div>
                         </div>
                         <div class="form-group">

@@ -1,0 +1,42 @@
+<div class="sidebar" data-background-color="white" data-active-color="danger">
+
+    <!--
+		Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+		Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+	-->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="{{ url_for('student_dashboard')}}" class="simple-text">
+                    Repostuds | Student
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="{{ url_for('student_dashboard')}}">
+                        <i class="ti-panel"></i>
+                        <p>DASHBOARD</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('student_profile')}}">
+                        <i class="ti-user"></i>
+                        <p>PROFILE</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('submitted_assignment')}}">
+                        <i class="fas fa-upload"></i>
+                        <p>UPLOAD ASSIGNMENT</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('assignment_table')}}">
+                        <i class="ti-view-list-alt"></i>
+                        <p>MY ASSIGNMENTS</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>

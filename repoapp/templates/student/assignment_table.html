@@ -1,0 +1,39 @@
+{% extends "student/layout.html" %}
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h3 class="title text-center">Uploaded Assignments </h3>
+                        <hr>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Course Code</th>
+                                <th>Course</th>
+                                <th>Assignment Uploaded</th>
+                            </thead>
+                            <tbody>
+                                    
+                                        <!-- for loop -->
+                                    {% for ass_result in ass_results %}
+                                <tr>
+                                    <td>{{ ass_result.course_code }}</td>
+                                    <td>{{ ass_result.course_name }}</td>
+                                    <td>{{ ass_result.submitted_file }}</td>
+                                </tr>
+                                    {% endfor %}
+                                    <!-- for loop -->
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
