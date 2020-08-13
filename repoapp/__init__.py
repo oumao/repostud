@@ -6,7 +6,7 @@ SUBMITTED_ASSIGNMENT = "/home/ouma/Documents/python/repostud/repoapp/static/subm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = b'klhohoajoiK09LL81HoljUlOkhla'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:oumaruc2016@localhost/repostud'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Oumaruc2016@localhost/repostud'
 app.config['SUBMITTED_ASSIGNMENT'] = SUBMITTED_ASSIGNMENT
 app.config['ALLOWED_FILE_EXTENSIONS'] = ['pdf', 'docx', 'txt', 'xlsx', 'pptx']
 
