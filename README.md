@@ -1,7 +1,7 @@
 # repostud
 
 This is a python project which requires
-- version 2.7 and above.
+- version 3.6 and above.
 - MySQL server version 5.0 and above
 - Bootstrap 4.0 
 - HTML5 and CSS3 
