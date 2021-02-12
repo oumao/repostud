@@ -1,18 +1,20 @@
 alembic==1.0.10
 Click==7.0
+dnspython==2.0.0
 dominate==2.3.5
+email-validator==1.1.1
 Flask==1.1.2
 Flask-Bootstrap==3.3.7.1
 Flask-Login==0.4.1
 Flask-Migrate==2.5.2
-Flask-MySQLdb==0.2.0
 Flask-SQLAlchemy==2.4.0
 Flask-WTF==0.14.3
+idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.10.1
 Mako==1.0.12
 MarkupSafe==1.1.1
-mysqlclient @ file:///C:/Users/user/Desktop/Flask%20Projects/repostud/mysqlclient-1.4.6-cp38-cp38-win32.whl
+psycopg2==2.8.5
 python-dateutil==2.8.0
 python-editor==1.0.4
 six==1.12.0
