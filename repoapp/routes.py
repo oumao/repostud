@@ -25,9 +25,13 @@ def home():
 def admin_registration():
 
     user_exist = Admin.query.all()
+
     if not user_exist:
+
         form = AdminRegistrationForm()
+
         if form.validate_on_submit():
+
             hash_pass = generate_password_hash(form.password.data)
             admin = Admin(fullname=form.fullname.data, email=form.email.data, password=hash_pass) 
             db.session.add(admin)
@@ -280,7 +284,9 @@ def submitted_assignment():
 @app.route('/assignment/table', methods=['GET', 'POST'])
 def assignment_table():
 
-    ass_results = db.session.query(Course.course_code, Course.course_name, SubmittedAssignment.submitted_file).outerjoin(Course, SubmittedAssignment.course_id == Course.id).all()
+    ass_results = db.session.query(Course.course_code, Course.course_name, SubmittedAssignment.submitted_file)
+                    .outerjoin(Course, SubmittedAssignment.course_id == Course.id)
+                    .all()
     
     return render_template('student/assignment_table.html', title="Student", ass_results=ass_results)
 
