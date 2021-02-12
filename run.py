@@ -1,5 +1,8 @@
-from repoapp import app
+import os
+from repoapp import create_app
+
+app = create_app(os.getenv('FLASK_ENV'))
 
 if __name__=='__main__':
-    app.run(debug=True, port=8000)
-    # db.create_all
+    app.run()
+    
