@@ -3,18 +3,19 @@ class Config:
     DEBUG = False
     TESTING = False
     SQLACHEMY_TRACK_MODIFICATION = False
+    SUBMITTED_ASSIGNMENT = "/home/ouma/Documents/python/repostud/repoapp/static/submitted_assignments"
 
 class DevConfig(Config):
 
-    """ Development Configuration """"
+    """ Development Configuration """
     ENV = 'development'
     TESTING = False
     DEBUG = True
 
 
 class ProdConfig(Config):
-
-     """ Production Configuration """"
+    
+    """ Production Configuration """
 
     ENV = 'production'
 
@@ -22,7 +23,7 @@ class ProdConfig(Config):
 
 class TestConfig(Config):
 
-     """ Testing Configuration """"
+    """ Testing Configuration """
 
     ENV = 'testing'
     TESTING = True
