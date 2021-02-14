@@ -33,6 +33,9 @@ def create_app(config):
     from .student import student as student_blueprint
     app.register_blueprint(student_blueprint)
 
+    from .home import home as home_blueprint
+    app.register_blueprint(home_blueprint)
+
     return app
 
 
