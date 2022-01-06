@@ -1,0 +1,3 @@
+graft repoapp/static
+graft repoapp/templates
+global-exclude *.pyc
