@@ -3,7 +3,7 @@ Click==7.0
 dnspython==2.0.0
 dominate==2.3.5
 email-validator==1.1.1
-Flask==1.1.2
+Flask==2.3.2
 Flask-Bootstrap==3.3.7.1
 Flask-Login==0.4.1
 Flask-Migrate==2.5.2
